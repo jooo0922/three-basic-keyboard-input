@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./app.js" type="module"></script>
+  </head>
+  <body>
+    <div class="spread">
+      <div>
+        <canvas width="100" height="100" id="c1"></canvas>
+        <div>tabindex not set</div>
+      </div>
+      <div>
+        <!-- 
+          tabindex
+
+          canvas 요소에 '키보드 이벤트'를 받으려면 해당 요소의 tabindex 속성을 0 이상의 값으로 설정해야 함. 
+          원래는 Tab 키를 사용해서 연속적인 키보드 탐색에서 어느 순서에 위치할지를 정해주는 건데
+          여기서는 키보드 이벤트를 받기 위한 설정으로 사용하는 것 같음.
+
+          tabindex="0"은 기본값으로, 문서 소스 코드의 순서에 따름.
+          만약 다른 요소중에서 tabindex="양의 정숫값"이라면 0이 할당된 요소는 양의 정숫값 이후 순서가 될거임.
+
+          tabindex="양의 정숫값"은 해당 정숫값보다 작은 양의 정숫값 이후에 접근할 수 있지만,
+          해당 정숫값보다 큰 양의 정숫값이나 0보다는 이전에 접근할 수 있다.
+          예를 들면, tabindex가 각각 0, 3, 4, 5인 요소들이 존재한다면
+          Tab키를 사용하여 각 요소를 탐색할 때 3 -> 4 -> 5 -> 0 이 순서로 접근이 가능하다는 뜻.
+        -->
+        <canvas width="100" height="100" id="c2" tabindex="0"></canvas>
+        <div>focus style not set</div>
+      </div>
+      <div>
+        <canvas width="100" height="100" id="c3" tabindex="1"></canvas>
+        <div>tabindex and<br />focus style set</div>
+      </div>
+    </div>
+  </body>
+</html>

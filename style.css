@@ -1,0 +1,17 @@
+.spread {
+  display: flex;
+  font-size: x-small;
+  text-align: center;
+}
+
+canvas {
+  margin: 5px;
+  background: pink;
+}
+
+/* tabindex 속성을 적용한 요소는
+Tab키나 키보드 이벤트를 받으면 focus 상태가 되어 강조 표시가 적용되어서 요소에 outline이 그려짐.
+이거를 안보이게 하려면 focus상태에서 outline: none으로 설정해줘야 함. */
+#c3:focus {
+  outline: none;
+}
